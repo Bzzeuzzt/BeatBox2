@@ -10,7 +10,7 @@ public class Sound {
     Sound(String mAseetPath) {
         this.mAssetPath= mAseetPath;
         String[] Components = mAseetPath.split("/");
-        mAssetName = Components[Components.length - 1];
+        mAssetName = Components[Components.length - 1].replace(".wav","");
     }
 
     String getmAseetPath() {

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -22,6 +23,7 @@ public class BeatBoxFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRetainInstance(true);
         TestBeatBox = new BeatBox(Objects.requireNonNull(getActivity()));
     }
 
@@ -68,8 +70,8 @@ public class BeatBoxFragment extends Fragment {
             Button RecyclerButton;
             public BeatHolder(@NonNull View itemView) {
                 super(itemView);
-                itemView.setOnClickListener(this);
                 RecyclerButton = itemView.findViewById(R.id.recycler_button);
+                RecyclerButton.setOnClickListener(this);
             }
 
             @Override
